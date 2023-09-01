@@ -4,15 +4,16 @@ import axios from "axios"
 
 export default function CharactersList() {
 
-const [ characters, setCharacters ] = useState()
+const [ characters, setCharacters ] = useState([])
+// console.log(characters)
 
 useEffect(() => {
 
   async function getCharacterData() {
     try {
       const { data } = await axios('/character')
-      setCharacters(data)
-      console.log(data)
+            // console.log(data)
+      setCharacters(data.data)
     } catch (error) {
       console.log(error)
     }
@@ -25,10 +26,16 @@ getCharacterData()
     <>
   <h1>Hello</h1>
 {/* <Container> */}
-  { characters.map((character => {
+ {characters.length > 0 ? characters.map((character => {
 const characterName = character.name
-return characterName
-  }))}
+return (
+  <div key={character._id}>
+    {characterName}
+    <img alt={'disneycharacter'}src={character.imageUrl}/>
+  </div>
+)
+  })) : 'Loading'}
+
   {/* </Container> */}
   </>
   )
