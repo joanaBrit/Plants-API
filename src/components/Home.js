@@ -1,5 +1,5 @@
 export default function Home() {
   return (
-  <h1>Plant</h1>
+  <h1>DisneyME</h1>
   )
 }
