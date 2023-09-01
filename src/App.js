@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import axios from 'axios'
 import Home from './components/Home'
-import CharactersInfo from './components/PlantInfo'
-import CharactersList from './components/PlantList'
+import CharactersInfo from './components/CharactersInfo'
+import CharactersList from './components/CharactersList'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 
@@ -20,8 +20,8 @@ const App = () => {
   <main>
   <Routes>
   <Route path='/' element={<Home/>} />
-  <Route path='/plantList' element={<CharactersList/>} />
-  <Route path='/plantInfo' element={<CharactersInfo/>} />
+  <Route path='/charactersList' element={<CharactersList/>} />
+  <Route path='/charactersInfo' element={<CharactersInfo/>} />
   </Routes>
   </main>
   </BrowserRouter>
