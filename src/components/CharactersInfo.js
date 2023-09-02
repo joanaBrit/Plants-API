@@ -6,7 +6,7 @@ export default function CharactersInfo() {
 
   //  State
   const [characters, setCharactersInfo] = useState(null)
-  const { id} = useParams()
+  const { id } = useParams()
   
   // console.log(characters)
 

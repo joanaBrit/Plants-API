@@ -12,7 +12,7 @@ export default function CharactersList() {
 
     async function getCharacterData() {
       try {
-        const { data } = await axios('/character')
+        const { data } = await axios('/character', { params: { pageSize: 7450 } })
         // console.log(data)
         setCharacters(data.data)
       } catch (error) {
