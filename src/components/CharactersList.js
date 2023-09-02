@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
+import MissingImages from "./MissingImages"
 
 export default function CharactersList() {
 
@@ -32,10 +33,10 @@ export default function CharactersList() {
         return (
           <div key={character._id}>
             {characterName}
-            {/* {character.imageUrl ? */}
             <Link to={`/characters/${character._id}`}>
-              <img alt={'disneycharacter'} src={character.imageUrl} /></Link>
-            {/* : 'not found' */}
+              {/* <img alt={'disneycharacter'} src={character.imageUrl} /> */}
+              <MissingImages imageUrl={character.imageUrl} altText={character.name} placeHolderImageUrl={'https://placehold.co/600x400'}  />
+              </Link>
           </div>
         )
       })) : 'Loading'}
