@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import axios from 'axios'
 import Home from './components/Home'
-import CharactersInfo from './components/CharactersInfo'
+import CharacterInfo from './components/CharacterInfo'
 import CharactersList from './components/CharactersList'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 
@@ -22,7 +22,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/characters' element={<CharactersList />} />
-          <Route path='/characters/:id' element={<CharactersInfo />} />
+          <Route path='/characters/:id' element={<CharacterInfo />} />
         </Routes>
       </main>
     </BrowserRouter>
