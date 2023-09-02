@@ -22,29 +22,29 @@ export default function CharactersList() {
     }
     getCharacterData()
   }, [])
-
+//  Current change - What you have in your local repo
+// In-coming change - Is what is currently in the remote repository
 
   return (
     <>
-    <section className="container">
       <h1>Hello</h1>
-      {/* <Container> */}
+      <section className="container">
       {characters.length > 0 ? characters.map((character => {
         const characterName = character.name
         return (
-          <section  key={character._id}>
-          <div className="character-list character">
-            {characterName}
+          
+          <div className="character-list character" key={character._id}>
+            <h2>{characterName}</h2>
             <Link to={`/characters/${character._id}`}>
               {/* <img alt={'disneycharacter'} src={character.imageUrl} /> */}
               <MissingImage key={`missingImage-${character._id}`} imageUrl={character.imageUrl} altText={character.name} 
               placeHolderImageUrl={'https://static.wikia.nocookie.net/disney/images/7/7c/Noimage.png'}  />
               </Link>
           </div>
-          </section>
+         
         )
       })) : 'Loading'}
-</section>
+     </section>
       {/* </Container> */}
     </>
   )
