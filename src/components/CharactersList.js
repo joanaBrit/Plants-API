@@ -35,7 +35,7 @@ export default function CharactersList() {
             {characterName}
             <Link to={`/characters/${character._id}`}>
               {/* <img alt={'disneycharacter'} src={character.imageUrl} /> */}
-              <MissingImages imageUrl={character.imageUrl} altText={character.name} placeHolderImageUrl={'https://placehold.co/600x400'}  />
+              <MissingImages imageUrl={character.imageUrl} altText={character.name} placeHolderImageUrl={'https://placehold.co/600x400/png'}  />
               </Link>
           </div>
         )
