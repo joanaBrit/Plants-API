@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
 
-function CleanImage({ imageUrl, altText, placeHolderImageUrl }) {
+function MissingImages({ imageUrl, altText, placeHolderImageUrl }) {
   const [src, setSrc] = useState(imageUrl);
   
-  useEffect(() => {
-    setSrc(imageUrl); // Reset image source when `imageUrl` prop changes
-  }, [imageUrl]);
-
   const handleError = () => {
     setSrc(placeHolderImageUrl);
   };
 
+  useEffect(() => {
+    setSrc(imageUrl); // Reset image source when `imageUrl` prop changes
+  }, [imageUrl]);
+
+  
   return (
     <img src={src} alt={altText} onError={handleError} />
   );
 }
 
-export default CleanImage;
+export default MissingImages;
