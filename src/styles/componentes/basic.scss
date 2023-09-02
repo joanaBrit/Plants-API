@@ -17,7 +17,6 @@ body {
 
 main {
   flex-grow: 1;
-  
 }
 
 h1 {
@@ -31,10 +30,15 @@ h1, h2 {
 }
 
 h2 {
-  margin-bottom: 1.3em;
-  margin-top: 0;
   padding: 1.5px;
   text-indent: 5px;
+  color: #3e4468;
+  background: #d7d1df;
+  border-radius: 4px;
+  font-size: 20px;
+  width: 12rem;
+  text-align: center;
+  box-shadow: 0px 2px 17px 0px rgb(33 42 193);
 }
 
 .home {
