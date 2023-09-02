@@ -18,7 +18,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <main>
-        <Link to='/'>🎉</Link>
+        <Link className='home' to='/'>🎉</Link>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/characters' element={<CharactersList />} />

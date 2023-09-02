@@ -26,12 +26,13 @@ export default function CharactersList() {
 
   return (
     <>
+    <section className="container">
       <h1>Hello</h1>
       {/* <Container> */}
       {characters.length > 0 ? characters.map((character => {
         const characterName = character.name
         return (
-          <section  key={character._id} className="container">
+          <section  key={character._id}>
           <div className="character-list character">
             {characterName}
             <Link to={`/characters/${character._id}`}>
@@ -43,8 +44,9 @@ export default function CharactersList() {
           </section>
         )
       })) : 'Loading'}
-
+</section>
       {/* </Container> */}
     </>
   )
 }
+// <section className="container">
