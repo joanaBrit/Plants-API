@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .character {
@@ -29,7 +31,7 @@
 
 }
 
-main img {
+main .disney-gif-characters {
   margin: 1.5rem auto;
   display: flex;
   flex-direction: column;

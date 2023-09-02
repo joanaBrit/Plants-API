@@ -1,0 +1,16 @@
+.custom-button {
+  margin: 1.5rem;
+  background-color: #7d4bf2;
+  border-color: #673bcc;
+  &:hover,
+  &:active {
+    background-color: #42228c;
+    border-color: #3a1d7d; 
+  }
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

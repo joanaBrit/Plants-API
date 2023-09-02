@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import axios from "axios"
 import MissingImage from "./MissingImage"
+import Spinner from 'react-bootstrap/Spinner';
 
 
 
@@ -29,8 +30,9 @@ export default function CharactersList() {
 
   return (
     <>
-      <img src='/images/disney.gif' alt="Disney-gif"/>
+      <img className="disney-gif-characters" src='/images/disney.gif' alt="Disney-gif"/>
       <section className="container">
+      
         {characters.length > 0 ? characters.map((character => {
           const characterName = character.name
           return (
@@ -44,7 +46,9 @@ export default function CharactersList() {
               </Link>
             </div>
           )
-        })) : 'Loading'}
+        })) :   <Spinner style={{ marginTop: '3rem'}} animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>}
       </section>
     </>
   )
