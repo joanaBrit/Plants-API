@@ -6,6 +6,7 @@ import CharactersList from './components/CharactersList'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 
 
+
 const App = () => {
   useEffect(() => {
     const getData = async () => {
@@ -18,7 +19,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <main>
-        <Link className='home' to='/'>🎉</Link>
+        <Link className='home' to='/'>
+          <img className='logo' src='/images/disney-logo.png' alt="Logo"></img>
+        </Link>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/characters' element={<CharactersList />} />
