@@ -32,7 +32,7 @@ export default function CharactersList() {
         return (
           <div key={character._id}>
             {characterName}
-            <Link to={`/charactersInfo?id=${character._id}`}>
+            <Link to={`/characters/${character._id}`}>
               <img alt={'disneycharacter'} src={character.imageUrl} /></Link>
           </div>
         )

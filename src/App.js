@@ -18,11 +18,11 @@ const App = () => {
   return (
     <BrowserRouter>
       <main>
-        <Link to='/'>☘️</Link>
+        <Link to='/'>🎉</Link>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/characters' element={<CharactersList />} />
-          <Route path='/charactersInfo' element={<CharactersInfo />} />
+          <Route path='/characters/:id' element={<CharactersInfo />} />
         </Routes>
       </main>
     </BrowserRouter>

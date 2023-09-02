@@ -1,28 +1,39 @@
-
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import axios from "axios"
 
 export default function CharactersInfo() {
 
-  //  GET the DATA
+  //  State
+  const [characters, setCharactersInfo] = useState(null)
+  const { id} = useParams()
+  
+  // console.log(characters)
 
-  // const [characters, setCharacters] = useState([])
-  // // console.log(characters)
+  useEffect(() => {
 
-  // useEffect(() => {
-
-  //   async function getCharacterData() {
-  //     try {
-  //       const { data } = await axios('/character')
-  //       // console.log(data)
-  //       setCharacters(data.data)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
-  //   getCharacterData()
-  // }, [])
+    async function getCharacterData() {
+      try {
+        const { data } = await axios(`/character/${id}`)
+        // console.log(data)
+        setCharactersInfo(data.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getCharacterData()
+  }, [id])
 
 
   return (
-  <h1>Hello</h1>
+    <>
+      {characters ?
+        <div>
+          <h1>{characters.name}</h1>
+          <img alt={'disneycharacter'} src={characters.imageUrl} />
+        </div>
+        :
+        'Loading'}
+    </>
   )
 }
