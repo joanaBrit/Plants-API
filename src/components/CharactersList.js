@@ -31,13 +31,15 @@ export default function CharactersList() {
       {characters.length > 0 ? characters.map((character => {
         const characterName = character.name
         return (
-          <div key={character._id}>
+          <section className="container">
+          <div className="character-list character" key={character._id}>
             {characterName}
             <Link to={`/characters/${character._id}`}>
               {/* <img alt={'disneycharacter'} src={character.imageUrl} /> */}
               <MissingImages imageUrl={character.imageUrl} altText={character.name} placeHolderImageUrl={'https://placehold.co/600x400/png'}  />
               </Link>
           </div>
+          </section>
         )
       })) : 'Loading'}
 
