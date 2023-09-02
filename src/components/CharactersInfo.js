@@ -37,3 +37,4 @@ export default function CharactersInfo() {
     </>
   )
 }
+// ? characters.imageUrl : 'not avaible'

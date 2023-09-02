@@ -32,8 +32,10 @@ export default function CharactersList() {
         return (
           <div key={character._id}>
             {characterName}
+            {/* {character.imageUrl ? */}
             <Link to={`/characters/${character._id}`}>
               <img alt={'disneycharacter'} src={character.imageUrl} /></Link>
+            {/* : 'not found' */}
           </div>
         )
       })) : 'Loading'}
