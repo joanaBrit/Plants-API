@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function MissingImages({ imageUrl, altText, placeHolderImageUrl }) {
+function MissingImage({ imageUrl, altText, placeHolderImageUrl }) {
   const [src, setSrc] = useState(imageUrl);
   
   const handleError = () => {
@@ -17,4 +17,4 @@ function MissingImages({ imageUrl, altText, placeHolderImageUrl }) {
   );
 }
 
-export default MissingImages;
+export default MissingImage;
