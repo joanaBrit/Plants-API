@@ -1,0 +1,36 @@
+.text {
+  font-family: "Indie Flower", cursive;
+  font-size: 18px;
+  word-spacing: 2px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding: 7px;
+  max-width: 12rem;
+}
+
+.text-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(103, 59, 204, 64%);
+  color: white;
+  border-radius: $b-r;
+  margin: 20px;
+  border-radius: 8px;
+  margin: 20px;
+  border: 2px solid #4619af;
+
+  h2 {
+    margin: 20px;
+  }
+}
+
+.character-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .info-img {
+    border-radius: 8px;
+  }
+}

@@ -1,11 +1,16 @@
 .custom-button {
   margin: 1.5rem;
-  background-color: #7d4bf2;
+  background-color: rgba(103, 59, 204, 64%);
   border-color: #673bcc;
+  font-family: "Indie Flower", cursive;
+  letter-spacing: 3px;
+  font-size: 17px;
+  font-weight: 600;
+
   &:hover,
   &:active {
     background-color: #42228c;
-    border-color: #3a1d7d; 
+    border: 2px solid #4619af;
   }
 }
 

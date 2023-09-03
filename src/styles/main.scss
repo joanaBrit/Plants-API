@@ -1,9 +1,11 @@
-
 @import '~bootstrap/scss/bootstrap';
+
 
 @import './components/basic.scss';
 @import './components/grid.scss';
 @import './components/buttonstyles.scss';
+@import './components/characterinfo.scss';
+
 
 * {
   box-sizing: border-box;

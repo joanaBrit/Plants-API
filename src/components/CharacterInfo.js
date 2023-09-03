@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import axios from "axios"
 
-// Bootstrap components
-// import Container from 'react-bootstrap/Container'
-// import Row from 'react-bootstrap/Row'
-// import Col from 'react-bootstrap/Col'
+import axios from "axios"
+import Spinner from 'react-bootstrap/Spinner'
 
 
 export default function CharacterInfo() {
@@ -14,14 +11,12 @@ export default function CharacterInfo() {
   const [character, setCharacterInfo] = useState(null)
   const { id } = useParams()
 
-  // console.log(characters)
 
   useEffect(() => {
 
     async function getCharacterData() {
       try {
         const { data } = await axios(`/character/${id}`)
-        console.log(data.data)
         setCharacterInfo(data.data)
       } catch (error) {
         console.log(error)
@@ -34,36 +29,37 @@ export default function CharacterInfo() {
   return (
     <>
       {character ?
-      
+
         <div className="character-info">
           <h1 className="name-character">{character.name}</h1>
           <img className='info-img' alt={'disneycharacter'} src={character.imageUrl} />
-          <h2>Films:</h2>
-          <div>
-            {character.films.length > 0 ? character.films.map((films)=> {
-            return <div key={films}>{films}</div>
-            }) : <div>No Films Found </div>}
-          </div>
+          <section className="text-wrap">
+            <h2>Films:</h2>
+            <div className="text">
+              {character.films.length > 0 ? character.films.map((films) => {
+                return <div key={films}>{films}</div>
+              }) : <div>No Films Found</div>}
+            </div>
 
-          <h2>TV Shows:</h2>
-          <div>
-            {character.tvShows.length > 0 ? character.tvShows.map((tvShow) => {
-            return <div key={tvShow}>{tvShow}</div>
-            }) : <div>No TV Series Found </div>}
-          </div>
-          
-          <h2>Video Games:</h2>
-          <div>
-            {character.videoGames.length > 0 ? character.videoGames.map((videoGames) => {
-            return <div key={videoGames}>{videoGames}</div>
-            }) : <div>No Video Games Found </div>}
-          </div>
+            <h2>TV Shows:</h2>
+            <div className="text">
+              {character.tvShows.length > 0 ? character.tvShows.map((tvShow) => {
+                return <div key={tvShow}>{tvShow}</div>
+              }) : <div>No TV Series Found</div>}
+            </div>
+
+            <h2>Video Games:</h2>
+            <div className="text">
+              {character.videoGames.length > 0 ? character.videoGames.map((videoGames) => {
+                return <div key={videoGames}>{videoGames}</div>
+              }) : <div>No Video Games Found</div>}
+            </div>
+          </section >
         </div>
-
+        : <Spinner style={{ marginTop: '3rem' }} animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>}
       
-      :
-        'Loading'}
     </>
   )
 }
-// ? characters.imageUrl : 'not avaible'
