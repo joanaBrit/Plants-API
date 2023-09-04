@@ -1,0 +1,4 @@
+```sh
+/api/*  https://api.disneyapi.dev/:splat   200
+/*  /index.html   200
+```
