@@ -3,7 +3,6 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 import axios from "axios"
-import MissingImage from "./MissingImage"
 import Spinner from 'react-bootstrap/Spinner'
 
 
@@ -37,8 +36,6 @@ export default function CharactersList() {
             <div className="character-list character" key={character._id}>
               <h2>{characterName}</h2>
               <Link to={`/characters/${character._id}`}>
-                {/* <MissingImage key={`missingImage-${character._id}`} imageUrl={character.imageUrl} altText={character.name}
-                  placeHolderImageUrl={'https://static.wikia.nocookie.net/disney/images/7/7c/Noimage.png'} /> */}
                 <img alt={character.name} src={character.imageUrl || 'https://static.wikia.nocookie.net/disney/images/7/7c/Noimage.png'} />
               </Link>
             </div>

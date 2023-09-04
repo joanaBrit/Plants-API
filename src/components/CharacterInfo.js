@@ -32,7 +32,7 @@ export default function CharacterInfo() {
 
         <div className="character-info">
           <h1 className="name-character">{character.name}</h1>
-          <img className='info-img' alt={'disneycharacter'} src={character.imageUrl} />
+          <img className='info-img' alt={character.name} src={character.imageUrl || 'https://static.wikia.nocookie.net/disney/images/7/7c/Noimage.png'} />
           <section className="text-wrap">
             <h2>Films:</h2>
             <div className="text">
