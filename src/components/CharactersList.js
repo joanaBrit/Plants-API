@@ -14,7 +14,7 @@ export default function CharactersList() {
 
     async function getCharacterData() {
       try {
-        const { data } = await axios('/character', { params: { pageSize: 500 } })
+        const { data } = await axios('/api/character', { params: { pageSize: 500 } })
         setCharacters(data.data)
       } catch (error) {
         console.log(error)

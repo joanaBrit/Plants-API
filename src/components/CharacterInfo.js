@@ -16,7 +16,7 @@ export default function CharacterInfo() {
 
     async function getCharacterData() {
       try {
-        const { data } = await axios(`/character/${id}`)
+        const { data } = await axios(`/api/character/${id}`)
         setCharacterInfo(data.data)
       } catch (error) {
         console.log(error)
